@@ -1,15 +1,22 @@
+import MainLayout from '@/components/layout/MainLayout';
 import Home from '@/pages/Home';
 import NotFound from '@/pages/NotFound';
-import { Route, Routes } from 'react-router-dom';
+import { createBrowserRouter } from 'react-router-dom';
 
-function AppRouter() {
-  return (
-    <Routes>
-      <Route path="/" element={<Home />} />
+const router = createBrowserRouter([
+  {
+    element: <MainLayout />,
+    children: [
+      {
+        path: '/',
+        element: <Home />,
+      },
+      {
+        path: '*',
+        element: <NotFound />,
+      },
+    ],
+  },
+]);
 
-      <Route path="*" element={<NotFound />} />
-    </Routes>
-  );
-}
-
-export default AppRouter;
+export default router;

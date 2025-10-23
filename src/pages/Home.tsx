@@ -1,7 +1,9 @@
+import { ImageGrid } from '@/features/image-galery/components/imageGrid';
+
 function Home() {
   return (
     <>
-      <div>HOME</div>
+      <ImageGrid></ImageGrid>
     </>
   );
 }
